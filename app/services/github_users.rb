@@ -20,7 +20,8 @@ class GithubUsers
                     'repos_url' => i['repos_url'],
                     'repos' => 0,
                     'start' => 0,
-                    'collaborations' => 0
+                    'collaborations' => 0,
+                    'fork' => 0
                 }
             }
             @hackers.concat(@temp) 
