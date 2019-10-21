@@ -8,7 +8,6 @@ class GithubUsers
         @hackers= []
         loop do
             @page = @page + 1
-            sleep(60)
             @users_resp = Faraday.get("https://api.github.com/search/users?q=location:#{@country}&page=#{@page}&per_page=100")
             @users = JSON.parse(@users_resp.body)
             if @users['items'] == nil
@@ -21,7 +20,8 @@ class GithubUsers
                     'repos' => 0,
                     'start' => 0,
                     'collaborations' => 0,
-                    'fork' => 0
+                    'fork' => 0,
+                    'score' => 0
                 }
             }
             @hackers.concat(@temp) 
