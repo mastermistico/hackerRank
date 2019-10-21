@@ -2,6 +2,7 @@ class EventHack
     def initialize(hackers)
         @hackers = hackers
     end
+    
     def event_hack
         @hackers.each do |hack,lines|
             @tmp = JSON.parse(Faraday.get("https://api.github.com/users/#{hack[:login]}/events"))

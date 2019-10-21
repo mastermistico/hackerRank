@@ -2,7 +2,7 @@ class HackersController < ApplicationController
 
     def hackers_search
         @search_result = GithubUsers.new('colombia').get_users
-        @rank_result = CaculRank.new(@search_result)
+        @rank_result = CalcRank.new(@search_result)
         @result = @rank_result.calc_rank.sort_by {|obj| obj[:score]}.reverse.first(100)
 
         element += "<div> <table>\n"

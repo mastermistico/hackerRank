@@ -1,7 +1,8 @@
-class CaculRank
+class CalcRank
     def initialize(hackers)
         @hackers = hackers
     end
+
     def calc_rank
         @repos = ReposHack.new(@hackers).repo_hack
         @event = EventHack.new(@repos).event_hack
