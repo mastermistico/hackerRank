@@ -5,7 +5,8 @@ class ReposHack
     
     def repo_hack
         @hackers.each do |hack,lines|
-            @hackers[lines][:repos] = JSON.parse(Faraday.get(hack['repos_url'])).length
+            sleep(10)
+            @hackers[lines][:repos] = JSON.parse(Faraday.get(hack['repos_url']).body).length
         end
         return @hackers
     end

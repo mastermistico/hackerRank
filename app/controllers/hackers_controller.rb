@@ -5,7 +5,7 @@ class HackersController < ApplicationController
         @rank_result = CalcRank.new(@search_result)
         @result = @rank_result.calc_rank.sort_by {|obj| obj[:score]}.reverse.first(100)
 
-        element += "<div> <table>\n"
+        element = "<div> <table>\n"
         element += "<thead><th><td>User</td><td>Info</td><td>Followers</td><td>Commits</td><td>Stars</td><td>Repos</td><td>Issues/PR</td></th><thead>\n"
         element += "<tbody>"
         @result.each_with_index do |user, i|
